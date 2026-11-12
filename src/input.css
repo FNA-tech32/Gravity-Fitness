@@ -1,0 +1,133 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+[effect="ripple"] {
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+[effect="ripple"]:before {
+  content: "";
+  display: block;
+  border-radius: 50%;
+  position: absolute;
+  pointer-events: none;
+  transform-origin: center;
+  top: calc(var(--y) * 1px);
+  left: calc(var(--x) * 1px);
+  width: calc(var(--d) * 1px);
+  height: calc(var(--d) * 1px);
+  background: var(--ripple-background, white);
+  transform: translate(-50%, -50%) scale(var(--s, 1));
+  opacity: calc(var(--o, 1) * var(--ripple-opacity, 0.3));
+  transition: calc(var(--t, 0) * var(--ripple-duration, 300ms))
+    var(--ripple-easing, linear);
+}
+
+* {
+  font-family: "Roboto", sans-serif;
+  scroll-behavior: smooth;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+:root {
+  --color-primary: 182 36 79;
+  --bgc1: 255 255 255;
+  --bgc2: 235 235 235;
+  --bgc3: 40 40 40;
+  --text1: 40 40 40;
+  --text2: 182 36 79;
+  --text3: 255 255 255;
+  --text4: 125 125 125;
+}
+
+:root[class="darkmode"] {
+  --bgc1: 40 40 40;
+  --bgc2: 30 30 30;
+  --bgc3: 255 255 255;
+  --text1: 255 255 255;
+  --text2: 255 255 255;
+  --text3: 0 0 0;
+  --text4: 255 255 255;
+}
+
+.section-padding {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.left-video {
+  perspective: 1000px;
+  transform-style: preserve-3d;
+}
+
+.video {
+  transform: rotateX(10deg) rotateY(10deg);
+}
+
+.testmonial {
+  background-image: url("../content/bg1.jpg");
+}
+
+.selected {
+  border: none;
+  background-color: #b6244f;
+}
+
+.hide {
+  display: none;
+}
+
+.active {
+  background-color: #ffffff1a;
+}
+
+.show-menu {
+  right: 0;
+}
+
+.is-off {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Contact Section Enhancements */
+.contact-card {
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.contact-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px -6px rgba(0, 0, 0, 0.12);
+}
+
+.darkmode .contact-card:hover {
+  box-shadow: 0 12px 24px -6px rgba(0, 0, 0, 0.45);
+}
+
+.contact-input {
+  border: 1px solid rgba(125, 125, 125, 0.25);
+  background-color: rgb(var(--bgc1) / 1);
+  color: rgb(var(--text1) / 1);
+}
+
+.contact-input:focus {
+  border-color: rgb(var(--color-primary) / 1);
+  box-shadow: 0 0 0 3px rgba(182, 36, 79, 0.2);
+}
+

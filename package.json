@@ -1,0 +1,9 @@
+{
+  "name": "gravity-fitness",
+  "version": "1.0.0",
+  "description": "Gravity Fitness - Modern High-Performance Gym & Fitness Club Website",
+  "homepage": "https://gravityfitness.com",
+  "devDependencies": {
+    "tailwindcss": "^3.3.3"
+  }
+}
